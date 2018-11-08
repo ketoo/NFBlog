@@ -43,20 +43,7 @@ export function login(userName, password) {
         window.store.userID = response.data.userID;
         window.store.jwt = response.data.jwt;
 
-        queryCurrentZone();
-  
-        queryItemTypeList();
-        queryItemIDList();
-        queryReasonList();
-        querySubReasonList();
-        queryActivityTypeList();
-        queryTaskIDList();
-        queryTaskTypeList();
-        queryRoundIDList();
-        queryRoundTypeList();
-        querySourceList();
-  
-        queryCurrentOnlineData();
+        //queryCurrentZone();
       }
       else
       {

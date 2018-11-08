@@ -7,7 +7,7 @@ class NFFooter extends React.Component {
   render() {
     return (
       <Footer style={{ textAlign: 'center' }}>
-           Data analysis system
+           NoahFrame Blog System, Author's github: www.github.com/ketoo
       </Footer>
     );
   }

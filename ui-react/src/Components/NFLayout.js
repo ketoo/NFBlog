@@ -28,14 +28,14 @@ class NFLayout extends React.Component {
             }
         <Layout>
           <Content >
-            { this.props.store.isLoggedIn && 
+            {
               <NFHeader store={this.props.store}/>
             }
-            { this.props.store.isLoggedIn && 
+            { this.props.store.isAdminMode && 
               <NFContent store={this.props.store}/>
             }
-            { !this.props.store.isLoggedIn && 
-              <NFLogin/>
+            {
+              //<NFLogin/>
             }
             {this.props.store.isLoading && 
               <div className="SpinCenter">
