@@ -1,0 +1,75 @@
+
+
+admin:
+/api/admin/tag  post addTag|添加标签
+/api/admin/tag  del delTag|删除标签
+
+/api/admin/users get
+/api/admin/user post  更改，创建用户
+/api/admin/user del
+
+/api/admin/articles get   get all articles获取所有文章(包含未发布)
+/api/admin/article post  add/update article|添加更新文章
+/api/admin/article del  delete article|删除文章
+
+/api/admin/comment/show  查询评论
+/api/admin/comment/audit  对评论进行审核
+/api/admin/comment/config/set  选择需要对评论审核还是不审核
+/api/admin/comment/config/get  获取对评论是否进行审核(未完成，还存在bug)
+
+user:
+/api/articles                get
+/api/article/{article_id}    get
+/api/article/{tag}          get
+
+/api/user/login
+/api/user/logout
+
+/api/user/comment/{article_id}   post     添加/修改评论
+/api/user/comment/{article_id}   get
+/api/user/comment/like/{comment_id}     post 给评论进行点赞
+/api/user/comment/like/{comment_id}     del 给评论取消点赞
+
+总共设计4大数据模块
+user--github
+{
+id,
+user_name,
+password,
+email,
+login_count,
+
+comments,[id_list]
+articles,[id_list]
+}
+
+article
+{
+id
+tag
+title
+picture
+preface
+data
+}
+
+tag
+{
+"tech",
+"travel",
+"news"
+}
+
+comment
+{
+id
+user_id
+article_id
+comment_ref_id
+data
+like_users
+}
+
+like
+{
+}
