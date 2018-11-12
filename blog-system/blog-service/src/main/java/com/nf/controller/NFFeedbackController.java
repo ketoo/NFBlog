@@ -1,12 +1,8 @@
 package com.nf.controller;
 
-import com.nf.DAO.*;
-import com.nf.DAO.StaticType.*;
 import com.nf.comm.NFResCode;
 import com.nf.controller.ResponseBody.ResponseBody;
-import com.nf.module.NFILogModule;
 import com.nf.schedule.NFSchedule;
-import com.nf.services.imp.NFMysqlModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,110 +28,7 @@ public class NFFeedbackController
     
     @Autowired
     NFSchedule schedule;
-    
-    @Autowired
-    NFILogModule logModule;
 
-    @Autowired
-    NFMysqlModule mysqlModule;
-
-    ////////////////
-    
-    @Autowired
-    NFActivityTypeDAO activityTypeDAO;
-    
-    @Autowired
-    NFItemIDDAO itemIDDAO;
-    
-    @Autowired
-    NFItemTypeDAO itemTypeDAO;
-
-    @Autowired
-    NFReasonDAO reasonDAO;
-    
-    @Autowired
-    NFRoundIDDAO roundIDDAO;
-    
-    @Autowired
-    NFRoundTypeDAO roundTypeDAO;
-    
-    @Autowired
-    NFSubReasonDAO subReasonDAO;
-    
-    @Autowired
-    NFTaskIDDAO taskIDDAO;
-    
-    @Autowired
-    NFTaskTypeDAO taskTypeDAO;
-    
-    @Autowired
-    NFZoneDAO zoneDAO;
-
-    @Autowired
-    NFSourceDAO sourceDAO;
-
-    @Autowired
-    NFActivityFlowDAO activityFlowDAO;
-    
-    @Autowired
-    NFBlockFlowDAO blockFlowDAO;
-    
-    @Autowired
-    NFDailyActivelyUsesDAO dailyActivelyUsesDAO;
-    
-    @Autowired
-    NFDailyAVGOnlineTimeDAO dailyAVGOnlineTimeDAO;
-    
-    @Autowired
-    NFDailyNewUsersDAO dailyNewUsersDAO;
-
-    @Autowired
-    NFDailyNewPlatUsersDAO dailyNewPlatUsersDAO;
-
-    @Autowired
-    NFDailyNewSourceUsersDAO dailyNewSourceUsersDAO;
-
-    @Autowired
-    NFDailyRetentionDAO dailyRetentionDAO;
-    
-    @Autowired
-    NFItemFlowDAO itemFlowDAO;
-    
-    @Autowired
-    NFLevelFlowDAO levelFlowDAO;
-    
-    @Autowired
-    NFMoneyFlowDAO moneyFlowDAO;
-    
-    @Autowired
-    NFOnlineFlowDAO onlineFlowDAO;
-    
-    @Autowired
-    NFPayFlowDAO payFlowDAO;
-    
-    @Autowired
-    NFPlayerBehaviourFlowDAO playerBehaviourFlowDAO;
-    
-    @Autowired
-    NFRoleFlowDAO roleFlowDAO;
-    
-    @Autowired
-    NFRoundFlowDAO roundFlowDAO;
-    
-    @Autowired
-    NFTaskFlowDAO taskFlowDAO;
-    
-    @Autowired
-    NFUserDataDAO userDataDAO;
-    
-    @Autowired
-    NFUserDeviceDAO userDeviceDAO;
-
-    @Autowired
-    NFAPIFlowDAO apiFlowDAO;
-
-    @Autowired
-    NFUserPermissionDAO userPermissionDAO;
 
     static Map<String, Integer> mZoneIOSOnlineNumber = new HashMap<>();
     static Map<String, Integer> mZoneANDOnlineNumber = new HashMap<>();

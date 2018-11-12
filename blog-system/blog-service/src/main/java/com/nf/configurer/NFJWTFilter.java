@@ -1,6 +1,6 @@
 package com.nf.configurer;
 
-import com.nf.services.NFIUserPermissionModule;
+import com.nf.services.NFIUserModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +27,14 @@ public class NFJWTFilter implements Filter
     private static final Logger logger = LoggerFactory.getLogger(NFJWTFilter.class);
     
     @Autowired
-    private NFIUserPermissionModule userPermissionModule;
+    private NFIUserModule userModule;
     
     @Override
     public void init(FilterConfig filterConfig) throws ServletException
     {
         ServletContext context = filterConfig.getServletContext();
         ApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(context);
-        userPermissionModule = (NFIUserPermissionModule)applicationContext.getBean("userPermissionModule");
+        userModule = (NFIUserModule)applicationContext.getBean("userModule");
     }
     
     @Override
@@ -80,6 +80,6 @@ public class NFJWTFilter implements Filter
             return false;
         }
     
-        return userPermissionModule.checkJWT(userId, token);
+        return userModule.checkJWT(userId, token);
     }
 }

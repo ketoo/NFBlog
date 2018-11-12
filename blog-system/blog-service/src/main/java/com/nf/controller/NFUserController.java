@@ -3,9 +3,8 @@ package com.nf.controller;
 import com.nf.comm.NFResCode;
 import com.nf.controller.RequestBody.NFRequestLoginBody;
 import com.nf.controller.ResponseBody.NFResLoginBody;
-import com.nf.module.NFILogModule;
 import com.nf.schedule.NFSchedule;
-import com.nf.services.NFIUserPermissionModule;
+import com.nf.services.NFIUserModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +24,9 @@ public class NFUserController
 {
     @Autowired
     NFSchedule schedule;
-    
+
     @Autowired
-    NFILogModule logModule;
-    
-    @Autowired
-    NFIUserPermissionModule userPermissionModule;
+    NFIUserModule userModule;
     
     private final Logger logger = LoggerFactory.getLogger(getClass());
     
@@ -40,7 +36,7 @@ public class NFUserController
     {
         NFResLoginBody xResLoginBody = new NFResLoginBody();
         
-        String strJwt = userPermissionModule.login(params.getUser(), params.getPassword());
+        String strJwt = userModule.login(params.getUser(), params.getPassword());
         if (strJwt != null && !strJwt.isEmpty())
         {
             xResLoginBody.setJwt(strJwt);

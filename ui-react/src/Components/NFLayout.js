@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch } from "react-router-dom";
 import 'antd/dist/antd.min.css';
 import { Layout, Menu, Breadcrumb, BackTop, Form, Icon, Spin } from 'antd';
 import { observable, computed, action } from "mobx";
@@ -22,6 +23,10 @@ class NFLayout extends React.Component {
   const NFLogin = Form.create()(NFLoginForm);
  
     return (
+      <Route path='/about' component={NFFooter}/> 
+      <Route path='/contact' component={NFHeaderMenu}/>
+      <Route component={NFLogin}/>
+
         <Layout style={{ minHeight: '100vh' }}>
             { this.props.store.isLoggedIn && 
               <NFSiderMenu store={this.props.store}/>

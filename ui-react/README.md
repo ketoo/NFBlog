@@ -7,6 +7,7 @@ npm i rsuite-datepicker --save
 
 npm install @antv/data-set --save
 
+npm install --save react-router-dom
 
 npm install
 
